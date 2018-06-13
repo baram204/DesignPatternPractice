@@ -1,4 +1,4 @@
-# Zepplein on Windows_10
+# Zepplein on Windows 10
 
 For instantly use apache zeppelin on windows 10.
 
