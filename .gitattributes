@@ -1,0 +1,5 @@
+zeppelin/interpreter/scio/zeppelin-scio_2.11-0.7.2.jar filter=lfs diff=lfs merge=lfs -text
+dependency.zip filter=lfs diff=lfs merge=lfs -text
+prerequisite.zip filter=lfs diff=lfs merge=lfs -text
+zeppelin.zip filter=lfs diff=lfs merge=lfs -text
+*.zip filter=lfs diff=lfs merge=lfs -text
