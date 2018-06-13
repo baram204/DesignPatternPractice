@@ -31,7 +31,26 @@ Run zeppelin directly on windows 10
 
 How to use instantly run zeppelin with this repositoryfile.
 
-clone this repository. then jump to `Common task` section.
+clone this repository. and unzip all.
+
+so, this repository has three directory.
+
+```
+ZeppleinWin10
+  |- dependency
+     - spark
+     - hadoop
+  |- prerequisite
+     - jdk8.exe
+     ......
+  |- zeppelin
+     - bin
+     - config
+     ....
+  README.md
+```
+
+then jump to `Common task` section.
 
 >  If you use docker-toolbox. recommand you to place zepplein inside `c:\Users`.
 
