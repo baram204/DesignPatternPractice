@@ -2,32 +2,32 @@
 
 For instantly use apache zeppelin on windows 10.
 
-Tested version
+**Tested version**
 - Spark version 2.1.0
 - Python version 3.6.1
 - Zeppelin version zeppelin-0.7.2-bin-all
 
-Tested page
+**Tested notebook**
 - Zeppelin Tutorial/Basic Features (Spark)
 
 > currently support only 64bit windows. if you want to use it on 32bit, download files taged 32bit and install it instead of 64bit.
 
-Table of Contents
+**Table of Contents**
 
 1. Use windows file
-  1. Use this repository file
-  2. Make your own install
-  3. Common task
+    1. Use this repository file
+    2. Make your own install
+    3. Common task
 2. Use doker image
-  1. Use this repository file
-  2. Make your own image
+    1. Use this repository file
+    2. Make your own image
 3. Reference
 
-### Use windows file
+## Use windows file
 
 Run zeppelin directly on windows 10
 
-##### Use this repository file
+### Use this repository file
 
 How to use instantly run zeppelin with this repositoryfile.
 
@@ -56,131 +56,129 @@ then jump to `Common task` section.
 
 > Don't clone files inside `C:\Program Files` zepplein can't recognize empty space between folder name.
 
-##### Make your own install
-
-**Prequsite**
+### Make your own install**
 
 1. install Prequsite
 
-- jdk8 - use ./prequsite/jdk-8u171-windows-x64.exe or [download](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+    - jdk8 - use ./prequsite/jdk-8u171-windows-x64.exe or [download](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 
 2. download Prequsite
-- winutils - use ./prequsite/winutils-master folder or [here](https://github.com/steveloughran/winutils)
-- zeppelin 0.7.2 [here](https://zeppelin.apache.org/releases/zeppelin-release-0.7.2.html)
-- hadoop 2.7.1 [here](https://archive.apache.org/dist/hadoop/core/hadoop-2.7.1/)
+    - winutils - use ./prequsite/winutils-master folder or [here](https://github.com/steveloughran/winutils)
+    - zeppelin 0.7.2 [here](https://zeppelin.apache.org/releases/zeppelin-release-0.7.2.html)
+    - hadoop 2.7.1 [here](https://archive.apache.org/dist/hadoop/core/hadoop-2.7.1/)
 
 3. extract all downloads to place you want
 
->  If you use docker-toolbox. recommand you to place zepplein inside `c:\Users`.
+    >  If you use docker-toolbox. recommand you to place zepplein inside `c:\Users`.
 
-> Don't clone files inside `C:\Program Files` zepplein can't recognize empty space between folder name.
+    > Don't clone files inside `C:\Program Files` zepplein can't recognize empty space between folder name.
 
 
 4. copy all spark jars to zepplein spark interpreter folder
 
-from `[SPARK folder]\jars\*.jar`
-to `[ZEPPELINfolder]\interpreter\spark`
+    from `[SPARK folder]\jars\*.jar`
+    to `[ZEPPELINfolder]\interpreter\spark`
 
 5. copy all pyspark zips to pyspark interpreter folder
 
-from `[SPARK folder]\python\lib\*.zip`
-to `[ZEPPELINfolder]\interpreter\spark`
+    from `[SPARK folder]\python\lib\*.zip`
+    to `[ZEPPELINfolder]\interpreter\spark`
 
 7. inside spark interpreter folder, remove some jars has name start with `datanucleus`
 
-like
+    like
 
-`[ZEPPELINfolder]\interpreter\spark\datanucleus*.jar`
+    `[ZEPPELINfolder]\interpreter\spark\datanucleus*.jar`
 
-specific
+    specific
 
-`[ZEPPELINfolder]\interpreter\spark\datanucleus-api-jdo-3.2.6.jar`
-`[ZEPPELINfolder]\interpreter\spark\datanucleus-core-3.2.10.jar`
-`[ZEPPELINfolder]\interpreter\spark\datanucleus-rdbms-3.2.9.jar`
+    `[ZEPPELINfolder]\interpreter\spark\datanucleus-api-jdo-3.2.6.jar`
+    `[ZEPPELINfolder]\interpreter\spark\datanucleus-core-3.2.10.jar`
+    `[ZEPPELINfolder]\interpreter\spark\datanucleus-rdbms-3.2.9.jar`
 
 7. rename two template file inside `[ZEPPELINfolder]\conf`
 
-from zeppelin-env.cmd.template
-to  zeppelin-env.cmd
+    from zeppelin-env.cmd.template
+    to  zeppelin-env.cmd
 
-from zeppelin-site.template
-to zeppelin-site
+    from zeppelin-site.template
+    to zeppelin-site
 
 8. give some info to zepplein with mod zepplein-env.cmd for proper spark(scala) & pyspark working
 
-```cmd
-set JAVA_HOME=%JAVA_HOME%
-set SPARK_HOME=
-set HADOOP_CONF_DIR=%HADOOP_HoME%\etc\hadoop
-set PYTHONPATH=%SPARK_HOME%\python;%SPARK_HOME%\python\lib\py4j-0.9.2-src.zip;%SPARK_HOME%\python\lib\pyspark.zip
-```
+    ```cmd
+    set JAVA_HOME=%JAVA_HOME%
+    set SPARK_HOME=
+    set HADOOP_CONF_DIR=%HADOOP_HoME%\etc\hadoop
+    set PYTHONPATH=%SPARK_HOME%\python;%SPARK_HOME%\python\lib\py4j-0.9.2-src.zip;%SPARK_HOME%\python\lib\pyspark.zip
+    ```
 
-> SPARK_HOME should be empty. if not, there will be error on running spark inside zeppelin. error has nothing todo with spark well working outside zeppelin.
+    > SPARK_HOME should be empty. if not, there will be error on running spark inside zeppelin. error has nothing todo with spark well working outside zeppelin.
 
 7. goto Next Sectin.
 
-##### Common task
+### Common task
 
 1. set System Environment like below:
 
-variable name : JAVA_HOME
-variavle value : your java folder
-or
-variavle value : `somewhere\ZeppleinWin10\prerequisite\Java\jdk1.8.0_171`
+    variable name : JAVA_HOME
+    variavle value : your java folder
+    or
+    variavle value : `somewhere\ZeppleinWin10\prerequisite\Java\jdk1.8.0_171`
 
-variable name : SPARK_HOME
-variavle value : your hadoop folder
-or
-variavle value : `somewhere\ZeppleinWin10\dependency\spark`
+    variable name : SPARK_HOME
+    variavle value : your hadoop folder
+    or
+    variavle value : `somewhere\ZeppleinWin10\dependency\spark`
 
-variable name : HADOOP_HOME
-variavle value : your hadoop folder
-or
-variavle value : `somewhere\ZeppleinWin10\dependency\hadoop`
+    variable name : HADOOP_HOME
+    variavle value : your hadoop folder
+    or
+    variavle value : `somewhere\ZeppleinWin10\dependency\hadoop`
 
-variable name : ZEPPLEIN_HOME
-variavle value : your zepplein folder
-or
-variavle value : `somewhere\ZeppleinWin10\zeppelin`
+    variable name : ZEPPLEIN_HOME
+    variavle value : your zepplein folder
+    or
+    variavle value : `somewhere\ZeppleinWin10\zeppelin`
 
 2. run zeppelin.cmd inside `ZeppleinWin10/bin`
 
 3. upper-right icon click -> interpreter -> spark -> edit -> zeppelin.spark.useHiveContext to false
 
-### Use doker image
+## Use doker image
 
 Run zeppelin on Docker-machine
 
-##### Make your own image : Build or  Pull Docker Image & run
+### Make your own image : Build or  Pull Docker Image & run
 
-**Build your own image with Dockerfile**
+1. Build your own image with Dockerfile
 
-read & take Dockerfile at [Launching Zeppelin with Docker in 1 minute](https://www.zepl.com/viewer/notebooks/bm90ZTovLzFhbWJkYS85MjcyZjk5ZTk1NTI0YTdhYmU1M2Q1YTA0ZWZlZmUxNS9ub3RlLmpzb24).
+    read & take Dockerfile at [Launching Zeppelin with Docker in 1 minute](https://www.zepl.com/viewer/notebooks/bm90ZTovLzFhbWJkYS85MjcyZjk5ZTk1NTI0YTdhYmU1M2Q1YTA0ZWZlZmUxNS9ub3RlLmpzb24).
 
-`docker build . -t apache/zeppelin:0.7.3`
+    `docker build . -t apache/zeppelin:0.7.3`
 
-**Pull image from server**
+2. Pull image from server
 
 `docker pull apache/zeppelin:0.7.3`
 
-**Make & Run your container with image**
+3. Make & Run your container with image
 
-without volume mount
+    without volume mount
 
-`docker run -p 8080:8080 --rm --name zeppelin apache/zeppelin:0.7.3`
+    `docker run -p 8080:8080 --rm --name zeppelin apache/zeppelin:0.7.3`
 
-with volume mount
+    with volume mount
 
-`docker run -p 8080:8080 --rm -v /c/Users/somewhere/zeppelin/logs:/logs -v /c/Users/somewhere/zeppelin/notebook:/notebook -e ZEPPELIN_LOG_DIR='/logs' -e ZEPPELIN_NOTEBOOK_DIR='/notebook' --name zeppelin apache/zeppelin:0.7.3`
+    `docker run -p 8080:8080 --rm -v /c/Users/somewhere/zeppelin/logs:/logs -v /c/Users/somewhere/zeppelin/notebook:/notebook -e     ZEPPELIN_LOG_DIR='/logs' -e ZEPPELIN_NOTEBOOK_DIR='/notebook' --name zeppelin apache/zeppelin:0.7.3`
 
-> make sure you're docker shared folder properly configure. if youre using docker-toolbox you could only mount folder inside `c:\Users`
+    > make sure you're docker shared folder properly configure. if youre using docker-toolbox you could only mount folder inside `c:\Users`
 
-start & stop container
+4. start & stop container
 
-`docker stop zepplein`
-`docker start zepplein`
+    `docker stop zepplein`
+    `docker start zepplein`
 
-##### (not yet)Use it instantly
+### (not yet)Use it instantly
 
 Buid or pull image toooooooo long & hard to wait. so I save it here.
 
@@ -188,11 +186,11 @@ Buid or pull image toooooooo long & hard to wait. so I save it here.
 
 `docker load < zep.tar`
 
-##### Common task
+### Common task
 
 upper-right icon click -> interpreter -> spark -> edit -> zeppelin.spark.useHiveContext to false
 
-### Reference
+## Reference
 
 - empty SPARK_HOME it different from official install document :[Zeppelin on windows does throws error after installation and trying to run a cell](https://issues.apache.org/jira/browse/ZEPPELIN-2677)
 - set HADOOP_HOME : [Error while configuring Apache Zeppelin on Windows 10](https://stackoverflow.com/questions/48656537/error-while-configuring-apache-zeppelin-on-windows-10)
