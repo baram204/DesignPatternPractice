@@ -21,6 +21,7 @@ For instantly use apache zeppelin on windows 10.
 2. Use doker image
     1. Use this repository file
     2. Make your own image
+    3. Common task
 3. Reference
 
 ## Use windows file
@@ -149,6 +150,14 @@ then jump to `Common task` section.
 
 Run zeppelin on Docker-machine
 
+### (not yet)Use this repository file
+
+Buid or pull image toooooooo long & hard to wait. so I save it here.
+
+`docker save apache/zeppelin:0.7.3 > zep.tar`
+
+`docker load < zep.tar`
+
 ### Make your own image : Build or  Pull Docker Image & run
 
 1. Build your own image with Dockerfile
@@ -161,7 +170,10 @@ Run zeppelin on Docker-machine
 
 `docker pull apache/zeppelin:0.7.3`
 
-3. Make & Run your container with image
+
+### Common task
+
+1. Make & Run your container with image
 
     without volume mount
 
@@ -173,22 +185,13 @@ Run zeppelin on Docker-machine
 
     > make sure you're docker shared folder properly configure. if youre using docker-toolbox you could only mount folder inside `c:\Users`
 
-4. start & stop container
+2. start & stop container
 
     `docker stop zepplein`
     `docker start zepplein`
 
-### (not yet)Use it instantly
 
-Buid or pull image toooooooo long & hard to wait. so I save it here.
-
-`docker save apache/zeppelin:0.7.3 > zep.tar`
-
-`docker load < zep.tar`
-
-### Common task
-
-upper-right icon click -> interpreter -> spark -> edit -> zeppelin.spark.useHiveContext to false
+3. after all works fine. upper-right icon click -> interpreter -> spark -> edit -> zeppelin.spark.useHiveContext to false
 
 ## Reference
 
