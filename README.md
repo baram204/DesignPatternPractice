@@ -2,6 +2,8 @@
 
 For instantly use apache zeppelin on windows 10.
 
+Because Github transfer restriction, currently can't download this repository.
+
 **Tested version**
 - Spark version 2.1.0
 - Python version 3.6.1
@@ -57,7 +59,7 @@ then jump to `Common task` section.
 
 > Don't clone files inside `C:\Program Files` zepplein can't recognize empty space between folder name.
 
-### Make your own install**
+### Make your own install
 
 1. install Prequsite
 
