@@ -68,7 +68,8 @@ then jump to `Common task` section.
 2. download Prequsite
     - winutils - use ./prequsite/winutils-master folder or [here](https://github.com/steveloughran/winutils)
     - zeppelin 0.7.2 [here](https://zeppelin.apache.org/releases/zeppelin-release-0.7.2.html)
-    - hadoop 2.7.1 [here](https://archive.apache.org/dist/hadoop/core/hadoop-2.7.1/)
+    - spark 2.1.0 [here](https://spark.apache.org/downloads.html)
+    - (optional) hadoop 2.7.1 [here](https://archive.apache.org/dist/hadoop/core/hadoop-2.7.1/)
 
 3. extract all downloads to place you want
 
