@@ -113,7 +113,7 @@ then jump to `Common task` section.
     ```cmd
     set JAVA_HOME=%JAVA_HOME%
     set SPARK_HOME=
-    set HADOOP_CONF_DIR=%HADOOP_HoME%\etc\hadoop
+    set HADOOP_CONF_DIR=%HADOOP_HOME%\etc\hadoop
     set PYTHONPATH=%SPARK_HOME%\python;%SPARK_HOME%\python\lib\py4j-0.9.2-src.zip;%SPARK_HOME%\python\lib\pyspark.zip
     ```
 
