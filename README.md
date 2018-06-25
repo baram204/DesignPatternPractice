@@ -30,7 +30,7 @@ Because Github transfer restriction, currently can't download this repository.
 
 Run zeppelin directly on windows 10
 
-### Use this repository file
+### (deprecated) Use this repository file
 
 How to use instantly run zeppelin with this repositoryfile.
 
@@ -122,6 +122,8 @@ then jump to `Common task` section.
 7. goto Next Sectin.
 
 ### Common task
+
+0. copy `winutils-master\hadoop-2.7.1\bin\*`  files to `%HADOOP_HOME%\bin`
 
 1. set System Environment like below:
 
